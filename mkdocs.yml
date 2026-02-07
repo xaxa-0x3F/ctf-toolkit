@@ -1,0 +1,19 @@
+site_name: ctf-toolkit
+site_author: xaxa-0x3F
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: red
+    accent: red
+  features:
+    - content.code.copy
+    - navigation.tabs
+
+nav:
+  - Home: index.md
+  - The Toolbook: tools.md
+  - Password Cracking: passwords.md
+  - Log Analysis: logs.md
+  - External Resources: resources.md
+  - Daily Commands: commands.md
