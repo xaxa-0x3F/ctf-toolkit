@@ -10,7 +10,7 @@ This toolkit is designed to be your quick-reference field guide during CTFs. It 
 
 <div class="grid cards" markdown>
 
--   :material-radar: **Recon & Enumeration**
+-   :material-radar: **Reconnaissance & Enumeration**
     ---
     Start here. Network scanning, OSINT, and finding the attack surface.
     [:octicons-arrow-right-24: Go to Recon](recon.md)
@@ -20,25 +20,30 @@ This toolkit is designed to be your quick-reference field guide during CTFs. It 
     SQL Injection, XSS, and web shell payloads.
     [:octicons-arrow-right-24: Go to Web](web.md)
 
--   :material-key: **Cryptography**
+-   :material-key: **Cryptography & Steganography**
     ---
     Identify ciphers, crack hashes, and analyze steganography.
     [:octicons-arrow-right-24: Go to Crypto](crypto.md)
 
--   :material-magnify: **Forensics**
+-   :material-magnify: **Forensics & Log Analysis**
     ---
     Log analysis, file carving, and digital investigation.
     [:octicons-arrow-right-24: Go to Forensics](forensics.md)
 
--   :material-bug: **Reverse Engineering**
+-   :material-bug: **Reverse Engineering & Malware**
     ---
     Decompilers, binary analysis, and malware dissection.
     [:octicons-arrow-right-24: Go to RevEng](reveng.md)
 
--   :material-console: **PrivEsc & Shells**
+-   :material-console: **Privilege Escalation & Shells**
     ---
     Stabilize your shell, transfer files, and become root.
     [:octicons-arrow-right-24: Go to PrivEsc](privesc.md)
+
+-   :material-keyboard: **Command Cheat Sheet**
+    ---
+    Essential Linux one-liners and syntax memory refreshers.
+    [:octicons-arrow-right-24: Go to Commands](commands.md)
 
 </div>
 

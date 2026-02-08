@@ -1,14 +1,13 @@
 # 🗝 Password Cracking & Wordlists
 
 ## 📂 Wordlists
-*Any list I have used is marked with an asterisk (*)*
 
 | Wordlist | Description | Link / Download |
 | :--- | :--- | :--- |
-| **RockYou\*** | Most popular wordlist. Always start here. | [Download (GitHub)](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) |
-| **CrackStation\*** | Online MD5, Very Large, Pretty Popular. | [Visit Site](https://crackstation.net/) |
-| **English Adjectives\*** | Useful for combinatory attacks. | [View on GitHub](https://github.com/dwyl/english-words) |
-| **Hashes.com\*** | Rainbow Table for hashes. | [Visit Site](https://hashes.com/en/decrypt/hash) |
+| **RockYou\** | Most popular wordlist. Always start here. | [Download (GitHub)](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) |
+| **CrackStation\** | Online MD5, Very Large, Pretty Popular. | [Visit Site](https://crackstation.net/) |
+| **English Adjectives\** | Useful for combinatory attacks. | [View on GitHub](https://github.com/dwyl/english-words) |
+| **Hashes.com\** | Rainbow Table for hashes. | [Visit Site](https://hashes.com/en/decrypt/hash) |
 | **Weakpass** | Huge collection of wordlists. | [Visit Site](https://weakpass.com) |
 
 ## 🔨 Cracking Tools
