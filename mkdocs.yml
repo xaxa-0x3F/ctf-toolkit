@@ -1,19 +1,30 @@
 site_name: ctf-toolkit
 site_author: xaxa-0x3F
+repo_url: https://github.com/xaxa-0x3F/ctf-toolkit
 theme:
   name: material
+  icon:
+    logo: material/sword
   palette:
-    scheme: slate
-    primary: red
-    accent: red
+    # Default to Dark Mode (Slate)
+    - scheme: slate
+      primary: red
+      accent: deep-orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
   features:
-    - content.code.copy
     - navigation.tabs
+    - navigation.sections
+    - content.code.copy
 
 nav:
   - Home: index.md
-  - The Toolbook: tools.md
+  - Toolkit:
+    - OSINT & Recon: osint.md
+    - Crypto & Stego: crypto.md
+    - Malware & Misc: misc.md
   - Password Cracking: passwords.md
   - Log Analysis: logs.md
-  - External Resources: resources.md
-  - Daily Commands: commands.md
+  - Resources: resources.md
+  - Commands: commands.md

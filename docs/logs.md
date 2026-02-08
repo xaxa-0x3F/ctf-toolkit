@@ -3,21 +3,21 @@
 *A guide to finding the needle in the haystack. In CTFs, logs are usually massive text files containing evidence of an attack.*
 
 ### 🧰 The Toolkit
-| Tool | Best For | Link |
+| Tool | Link | Best For |
 | :--- | :--- | :--- |
-| **Linux CLI** | The fastest way to parse massive files (`grep`, `awk`, `cut`). | Built-in |
-| **Excel / Sheets** | Visual sorting by IP, Time, or Status Code. | N/A |
-| **lnav** | An advanced log file navigator for the terminal with syntax highlighting. | [lnav.org](https://lnav.org/) |
-| **CyberChef** | Decoding base64/hex strings found inside logs. | [CyberChef](https://gchq.github.io/CyberChef/) |
-| **Drone Logs** | Specific tools for DJI/Flight data. | [AirData](https://app.airdata.com/) |
+| **Excel Online** | [Use in Browser](https://www.office.com/launch/excel) | Sorting CSVs visually without installing Office. |
+| **Google Sheets** | [Use in Browser](https://docs.google.com/spreadsheets) | Great for filtering by IP columns. |
+| **lnav** | [lnav.org](https://lnav.org/) | Advanced log navigator for the terminal (Color coded). |
+| **CyberChef** | [CyberChef](https://gchq.github.io/CyberChef/) | Decoding base64/hex strings found inside logs. |
+| **Drone Logs** | [AirData](https://app.airdata.com/) | Upload DJI flight logs to see the flight path on a map. |
 
 ---
 
 ### 🧠 CLI Analysis Workflow
-*Don't read lines one by one. Filter the noise.*
+*Don't read lines one by one. Filter the noise using the terminal.*
 
 #### 1. The "Top 10" Method
-Find out who is making the most noise. The IP with thousands of hits is usually the attacker running a scan.
+Find out who is making the most noise. The IP with thousands of hits is usually the attacker.
 
     cat access.log | awk '{print $1}' | sort | uniq -c | sort -nr | head -10
 
@@ -26,7 +26,7 @@ Find out who is making the most noise. The IP with thousands of hits is usually 
 * **404 (Not Found):** The attacker is guessing file names (scanning).
 * **500 (Server Error):** The attacker broke something (likely SQL Injection).
 
-    # Show me only successful requests from a specific bad IP
+    # Show me only successful requests from a specific IP
     grep "192.168.1.5" access.log | grep " 200 "
 
 #### 3. User-Agent Hunting
