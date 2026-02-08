@@ -1,30 +1,59 @@
-site_name: ctf-toolkit
-site_author: xaxa-0x3F
-repo_url: https://github.com/xaxa-0x3F/ctf-toolkit
+site_name: CTF Toolkit
+site_url: https://xaxa-0x3f.github.io/ctf-toolkit/
+repo_url: https://github.com/xaxa-0x3f/ctf-toolkit
+repo_name: xaxa-0x3f/ctf-toolkit
+edit_uri: edit/main/docs/
+
 theme:
   name: material
-  icon:
-    logo: material/sword
   palette:
-    # Default to Dark Mode (Slate)
-    - scheme: slate
-      primary: red
-      accent: deep-orange
+    - scheme: slate  # Dark Mode (Default)
+      primary: purple
+      accent: cyan
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+    - scheme: default # Light Mode
+      primary: purple
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  
   features:
-    - navigation.tabs
-    - navigation.sections
-    - content.code.copy
+    - navigation.tabs        # Top-level tabs (Home, Toolkit, About)
+    - navigation.sections    # Sidebar sections within tabs
+    - navigation.expand      # Auto-expand sidebar
+    - navigation.top         # Back-to-top button
+    - toc.integrate          # Table of Contents in sidebar
+    - search.suggest         # Intelligent search
+    - content.code.copy      # Copy button for code blocks
+
+  icon:
+    logo: material/shield-key  # Cool hacker icon
+
+markdown_extensions:
+  - pymdownx.highlight:      # Syntax Highlighting
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences     # Nested code blocks
+  - admonition               # Colorful "Note/Warning" boxes
+  - pymdownx.details         # Collapsible blocks
+  - pymdownx.emoji:
+      emoji_index:!!python/name:material.extensions.emoji.twemoji
+      emoji_generator:!!python/name:material.extensions.emoji.to_svg
 
 nav:
   - Home: index.md
   - Toolkit:
-    - OSINT & Recon: osint.md
-    - Crypto & Stego: crypto.md
-    - Malware & Misc: misc.md
-  - Password Cracking: passwords.md
-  - Log Analysis: logs.md
-  - Resources: resources.md
-  - Commands: commands.md
+      - Enumeration: toolkit/enumeration.md
+      - Web Exploitation: toolkit/web-exploitation.md
+      - Forensics: toolkit/forensics.md
+      - Cryptography: toolkit/cryptography.md
+      - Reverse Engineering: toolkit/reverse-engineering.md
+      - OSINT: toolkit/osint.md
+      - Miscellaneous: toolkit/miscellaneous.md
+  - References:
+      - Cheat Sheets: references/cheatsheets.md
+      - Resources: references/resources.md

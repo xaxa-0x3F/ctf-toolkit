@@ -1,25 +1,47 @@
 # 🗝 Password Cracking & Wordlists
 
-### 📂 Wordlists
-[cite_start]*Any list I have used is marked with an asterisk (*)* [cite: 27, 28]
+## 📂 Wordlists
+*Any list I have used is marked with an asterisk (*)*
 
-* **[RockYou*](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt):** Most popular wordlist. [cite_start]Always start here[cite: 29].
-* [cite_start]**[CrackStation*](https://crackstation.net/):** Online MD5, Very Large, Pretty Popular[cite: 30].
-* [cite_start]**[English Adjectives*](https://github.com/dwyl/english-words):** Useful for combinatory attacks[cite: 31].
-* [cite_start]**[Crackstation (Rainbow)*](https://crackstation.net/):** Rainbow Table for hashes[cite: 32].
-* [cite_start]**[Hashes.com*](https://hashes.com/en/decrypt/hash):** Rainbow Table for hashes[cite: 33].
-* [cite_start]**[Weakpass](https://weakpass.com):** Huge collection of wordlists[cite: 39].
-
-### 🔨 Cracking Tools
-| Tool | Description | Usage Command |
+| Wordlist | Description | Link / Download |
 | :--- | :--- | :--- |
-| **Hashcat** | [cite_start]GPU Cracking (Fastest) [cite: 25] | `hashcat -m 0 hash.txt wordlist.txt` |
-| **John the Ripper** | [cite_start]CPU Cracking (Versatile) [cite: 25] | `john --wordlist=rockyou.txt hash.txt` |
-| **Ophcrack** | [cite_start]Windows Passwords [cite: 25] | Load ISO/Tables to crack Windows login. |
-| **CrackStation** | [cite_start]Online Cracking [cite: 25] | Paste hash directly into website. |
+| **RockYou\*** | Most popular wordlist. Always start here. | [Download (GitHub)](https://github.com/brannondorsey/naive-hashcat/releases/download/data/rockyou.txt) |
+| **CrackStation\*** | Online MD5, Very Large, Pretty Popular. | [Visit Site](https://crackstation.net/) |
+| **English Adjectives\*** | Useful for combinatory attacks. | [View on GitHub](https://github.com/dwyl/english-words) |
+| **Hashes.com\*** | Rainbow Table for hashes. | [Visit Site](https://hashes.com/en/decrypt/hash) |
+| **Weakpass** | Huge collection of wordlists. | [Visit Site](https://weakpass.com) |
 
-### 📄 File Cracking (Preparation)
+## 🔨 Cracking Tools
+
+| Tool | Description | Install Command / Usage |
+| :--- | :--- | :--- |
+| **Hashcat** | GPU Cracking (Fastest) | `apt install hashcat`<br>`hashcat -m 0 hash.txt wordlist.txt` |
+| **John the Ripper** | CPU Cracking (Versatile) | `apt install john`<br>`john --wordlist=rockyou.txt hash.txt` |
+| **Ophcrack** | Windows Passwords | [Download ISO](https://ophcrack.sourceforge.io/)<br>Load tables to crack Windows login. |
+| **CrackStation** | Online Cracking | [Go to Site](https://crackstation.net/)<br>Paste hash directly into website. |
+
+## 📄 File Cracking (Preparation)
 Before cracking a file, you need to turn it into a "hash" that John can read.
-* [cite_start]**PDF Files:** `pdf2john file.pdf > hash.txt` [cite: 25]
-* [cite_start]**Zip Files:** `zip2john file.zip > hash.txt` or `fCrackZip` [cite: 26]
-* **Windows SAM:** `samdump2 SYSTEM SAM > hashes.txt`
+
+=== "PDF Files"
+    Use `pdf2john` to extract the hash.
+    ```bash
+    # Install: usually comes with John
+    pdf2john file.pdf > hash.txt
+    ```
+
+=== "Zip Files"
+    Use `zip2john` or `fCrackZip`.
+    ```bash
+    zip2john file.zip > hash.txt
+    # OR
+    apt install fcrackzip
+    ```
+
+=== "Windows SAM"
+    Dump the SAM database.
+    ```bash
+    # Requires samdump2
+    apt install samdump2
+    samdump2 SYSTEM SAM > hashes.txt
+    ```

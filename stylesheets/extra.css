@@ -1,0 +1,30 @@
+/* Import Google Font - JetBrains Mono for Code */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap');
+
+:root {
+  --md-text-font: "Inter", sans-serif;
+  --md-code-font: "JetBrains Mono", monospace;
+}
+
+/* Neon Glow for H1 in Dark Mode */
+[data-md-color-scheme="slate"] h1 {
+  text-shadow: 0 0 15px rgba(189, 147, 249, 0.4); /* Purple Glow */
+  color: #bd93f9;
+}
+
+/* Code Block Styling - Border and Glow */
+.md-typeset pre > code {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  background-color: #1e1e2e;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #bd93f9;
+  border-radius: 4px;
+}
