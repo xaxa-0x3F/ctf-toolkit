@@ -74,5 +74,6 @@ nav:
     - Reverse Engineering & Malware: reveng.md
     - Privilege Escalation & Shells: privesc.md
     - Password Cracking: passwords.md
+    - Custom Wordlists: wordlists/anime.md
     - Command Cheat Sheet: commands.md
   - Resources: resources.md
